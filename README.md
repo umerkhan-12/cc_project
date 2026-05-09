@@ -7,7 +7,7 @@ The implementation is original, file-based, deterministic, and written in plain 
 ## Folder Structure
 
 ```text
-Compiler_Project/
+cc_project/
 ├── Phase1_Lexical/
 ├── Phase2_Syntax/
 ├── Phase3_Semantic/
@@ -17,7 +17,8 @@ Compiler_Project/
 ├── TestCases/
 ├── Documentation/
 ├── compiler_core/
-└── README.md
+├── README.md
+└── run_lumina.py
 ```
 
 `compiler_core/` contains shared implementation code. The six phase folders contain independent executable scripts.
@@ -63,7 +64,7 @@ The full grammar is documented in [Documentation/Grammar.md](Documentation/Gramm
 
 ## How to Run Each Phase
 
-Run commands from inside the `Compiler_Project` directory.
+Run commands from inside the project root directory.
 
 ### Phase 1: Lexical Analysis
 
@@ -129,6 +130,22 @@ From a source file:
 
 ```bash
 python Phase6_CodeGeneration/codegen.py TestCases/valid_basic.lum --from-source
+```
+
+### Unified Runner
+
+A convenient root entrypoint is `run_lumina.py`. Run all compiler phases sequentially from source with:
+
+```bash
+python run_lumina.py --all TestCases/valid_basic.lum
+```
+
+Run a single phase by number or name:
+
+```bash
+python run_lumina.py --phase 4 TestCases/valid_loop_if.lum --plain
+python run_lumina.py --phase optimize TestCases/optimization_input.tac --show-before-after
+python run_lumina.py --phase codegen TestCases/valid_basic.lum --from-source
 ```
 
 ## Error Handling Demonstrations
