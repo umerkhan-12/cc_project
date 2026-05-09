@@ -1,0 +1,12 @@
+int a = 2 + 3 * 4;
+int b = a;
+int c = b + 0;
+int unused = 8 * 9;
+bool flag = c < 20;
+
+if (flag) {
+    print(c);
+} else {
+    print(0);
+}
+

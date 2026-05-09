@@ -1,0 +1,4 @@
+int total = #10;
+
+total = total @ 2;
+

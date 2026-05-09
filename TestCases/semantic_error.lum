@@ -1,0 +1,5 @@
+int x = 5;
+float x = 2.5;
+y = x + 1;
+bool ok = x + true;
+

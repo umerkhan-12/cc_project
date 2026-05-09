@@ -1,0 +1,15 @@
+int value = 10;
+bool show = true;
+
+if (show) {
+    int value = 20;
+    print(value);
+
+    {
+        float value = 3.5;
+        print(value);
+    }
+}
+
+print(value);
+

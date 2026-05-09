@@ -1,0 +1,14 @@
+// Basic declarations, assignment, arithmetic, relational expression, and output.
+int count = 3;
+float price = 12.5;
+char grade = 'A';
+bool ready = count < 10;
+
+count = count + 2 * 4;
+
+if (ready && count > 5) {
+    print(count);
+} else {
+    print(price);
+}
+
