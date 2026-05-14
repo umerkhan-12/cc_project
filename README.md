@@ -198,6 +198,19 @@ The final target is a simple stack machine:
 ## Test Cases
 
 - `valid_basic.lum`: declarations, expressions, conditionals, output
+
+## Web Frontend
+
+A simple browser-based frontend is available from the project root. Start the server with:
+
+```bash
+python web_frontend/app.py
+```
+
+Then open `http://127.0.0.1:8000` in your browser.
+
+The frontend lets you paste Lumina source code, choose a compiler phase, and see the results live in the browser.
+
 - `valid_loop_if.lum`: while loop and if/else
 - `valid_nested_scope.lum`: nested block scopes and shadowing
 - `optimization_demo.lum`: source-level optimization opportunities

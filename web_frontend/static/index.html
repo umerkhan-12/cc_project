@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumina Compiler Web Frontend</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <main class="layout">
+      <header class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">Lumina Compiler</span>
+          <h1>Inspect your language pipeline with a polished browser workspace.</h1>
+          <p>Paste Lumina source code, select a phase, and view tokens, ASTs, TAC, optimizer output, or generated target code instantly.</p>
+        </div>
+        <div class="hero-meta">
+          <span class="pill">Local runtime</span>
+          <span class="pill">No external dependencies</span>
+        </div>
+      </header>
+
+      <section class="panel controls-panel">
+        <div class="panel-header">
+          <div>
+            <p class="panel-label">Compiler controls</p>
+            <h2>Phase selection & runtime settings</h2>
+          </div>
+          <span class="status-chip">Fast + interactive</span>
+        </div>
+
+        <div class="field-group">
+          <label for="phase">Select a compiler phase</label>
+          <select id="phase">
+            <option value="all">All phases</option>
+            <option value="1">1 - Lexical</option>
+            <option value="2">2 - Syntax</option>
+            <option value="3">3 - Semantic</option>
+            <option value="4">4 - ICG</option>
+            <option value="5">5 - Optimization</option>
+            <option value="6">6 - Code Generation</option>
+          </select>
+        </div>
+
+        <div class="toggle-grid">
+          <label class="toggle"><input type="checkbox" id="plain" /><span>Plain TAC (phase 4)</span></label>
+          <label class="toggle"><input type="checkbox" id="showBeforeAfter" /><span>Show before/after (phase 5)</span></label>
+          <label class="toggle"><input type="checkbox" id="fromSource" checked /><span>Treat input as source (phases 5/6)</span></label>
+        </div>
+
+        <div class="actions">
+          <button id="runButton" class="button button-primary" type="button">
+            <span class="button-text">Run compiler</span>
+            <span class="button-spinner" aria-hidden="true"></span>
+          </button>
+          <button id="loadSample" class="button button-secondary" type="button">Load sample code</button>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <div class="panel editor-panel">
+          <div class="panel-header">
+            <div>
+              <p class="panel-label">Source editor</p>
+              <h2>Paste Lumina code here</h2>
+            </div>
+          </div>
+          <label class="field-label" for="source">Source code</label>
+          <textarea id="source" spellcheck="false"></textarea>
+        </div>
+
+        <div class="panel output-panel">
+          <div class="panel-header">
+            <div>
+              <p class="panel-label">Compiler output</p>
+              <h2>Results & diagnostics</h2>
+            </div>
+          </div>
+          <label class="field-label" for="output">Output stream</label>
+          <pre id="output"></pre>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
